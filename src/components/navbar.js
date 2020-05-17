@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import HOME from "./home";
 import { Switch, Route } from "react-router";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ export default class navbar extends Component{
                     <ul className="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                     
                     <li className="nav-logo">
-                        <Link to="/home" style={{ textDecoration: 'none' }}><img className="logo" src={logo}/></Link>
+                        <Link to="" style={{ textDecoration: 'none' }}><img className="logo" src={logo}/></Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/projects" style={{ textDecoration: 'none' }}><a className="nav-link pl-0 "><span className="d-md-inline">Projects</span></a></Link>
@@ -39,12 +39,12 @@ export default class navbar extends Component{
                     </ul>
                 </div>
                 </nav> 
-            </aside>           
+            </aside>          
             <Switch>
-                <Route path="/home" component={HOME}/>
-                <Route path="/resume" component={RESUME}/>
-                <Route path="/projects" component={PROJECTS}/>
-                <Route path="/contact" component={CONTACT}/>
+                <Route exact path="/" component={HOME}/>
+                <Route exact path="/resume" component={RESUME}/>
+                <Route exact path="/projects" component={PROJECTS}/>
+                <Route exact path="/contact" component={CONTACT}/>
             </Switch>
             
             </div>
