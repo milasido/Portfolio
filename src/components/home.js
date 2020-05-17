@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom';
 import FOOTER from './footer';
 import device from "./device .png"
 import './home.css'
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css'
 
 export default class home extends Component {
+    constructor(props) {
+        super(props);  
+        this.state = {isOpen: false,};
+      }
   render() {
     return (
         <div className="col bg-faded py-3 flex-grow-1 container-fluid home-home">
@@ -49,7 +55,19 @@ export default class home extends Component {
                     belive the more I try, the more success I will get. 
                     So, I will never stop learning to reach my dream.  
                     </p>
-                    <img className="device" src={device}/>
+                    <div style={{float: "right", position:"relative"}}>
+                        <img style={{cursor:"pointer"}} onClick={()=> this.setState({isOpen: true})} className="device" src={device}/>
+                        <div 
+                            style={{position:"absolute", top:"50%", left:"50%", transform: "translate(-50%, -50%)", 
+                            backgroundColor: "black", color:"white",paddingLeft:"10px", opacity:"0.5", 
+                            paddingRight:"10px", pointerEvents:"none" }}>Click to zoom</div>
+                    </div>
+                    {this.state.isOpen && 
+                        <Lightbox mainSrc={device}
+                        onCloseRequest={()=> this.setState({isOpen: false})}/>
+                    }
+                    
+                    
                     <p>
             
                     This website is a self-project I created during Covid-2019 ^^

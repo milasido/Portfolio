@@ -38,7 +38,7 @@ export default class navbar extends Component{
                        
                     </ul>
                 </div>
-                </nav>
+                </nav> 
             </aside>           
             <Switch>
                 <Route path="/home" component={HOME}/>
