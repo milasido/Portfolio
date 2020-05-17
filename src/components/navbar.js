@@ -22,7 +22,7 @@ export default class navbar extends Component{
                     <ul className="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                     
                     <li className="nav-logo">
-                        <Link to="" style={{ textDecoration: 'none' }}><img className="logo" src={logo}/></Link>
+                        <Link to="/" style={{ textDecoration: 'none' }}><img className="logo" src={logo}/></Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/projects" style={{ textDecoration: 'none' }}><a className="nav-link pl-0 "><span className="d-md-inline">Projects</span></a></Link>
