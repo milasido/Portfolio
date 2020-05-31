@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import RESUME from "./resume";
 import CONTACT from "./contact";
 import PROJECTS from "./projects";
-import logo from "./logo.jpg";
+import logo from "./logo.png";
 
 export default class navbar extends Component{
     
